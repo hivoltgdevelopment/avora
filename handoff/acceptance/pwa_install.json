@@ -1,0 +1,25 @@
+{
+  "feature": "PWA Install & Offline",
+  "scenarios": [
+    {
+      "given": "User on Chrome desktop",
+      "when": "PWA criteria met",
+      "then": [
+        "Install prompt available (deferred)",
+        "Offline cache for shell available"
+      ]
+    },
+    {
+      "given": "Network offline",
+      "when": "User opens app",
+      "then": [
+        "Last-synced data visible",
+        "Clear offline state message"
+      ]
+    }
+  ],
+  "done": [
+    "Lighthouse PWA pass",
+    "Workbox cache strategy documented"
+  ]
+}

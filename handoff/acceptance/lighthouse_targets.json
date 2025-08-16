@@ -1,0 +1,24 @@
+{
+  "feature": "Lighthouse Targets",
+  "targets": {
+    "performance": 0.95,
+    "accessibility": 0.98,
+    "bestPractices": 1.0,
+    "seo": 1.0
+  },
+  "scenarios": [
+    {
+      "given": "Production build",
+      "when": "LHCI runs in CI",
+      "then": [
+        "Build fails if thresholds unmet",
+        "Reports stored under /compliance/lighthouse/"
+      ]
+    }
+  ],
+  "done": [
+    "CI job present",
+    "Artifacts retained",
+    "Regressions blocked"
+  ]
+}

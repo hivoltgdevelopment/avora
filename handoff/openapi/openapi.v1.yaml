@@ -1,0 +1,57 @@
+openapi: 3.0.3
+info:
+  title: Avora API
+  version: "1.0.0"
+servers:
+  - url: https://api.avora.example.com
+paths:
+  /api/calendar/today:
+    get:
+      summary: Get today's calendar blocks
+      responses:
+        '200':
+          description: OK
+  /api/monday/tasks:
+    get:
+      summary: Get normalized tasks from Monday.com
+      responses:
+        '200':
+          description: OK
+  /api/plan/generate:
+    post:
+      summary: Generate a daily plan
+      requestBody:
+        required: true
+      responses:
+        '200':
+          description: OK
+  /api/notify/shift:
+    post:
+      summary: Schedule a shift-gear notification
+      responses:
+        '204':
+          description: No Content
+  /api/billing/checkout:
+    post:
+      summary: Initiate checkout (Stripe or Coinbase)
+      responses:
+        '200':
+          description: URL to redirect
+  /api/billing/portal:
+    post:
+      summary: Create Stripe customer portal session
+      responses:
+        '200':
+          description: URL
+  /api/webhooks/stripe:
+    post:
+      summary: Stripe webhook
+      responses:
+        '200':
+          description: OK
+  /api/webhooks/coinbase:
+    post:
+      summary: Coinbase Commerce webhook
+      responses:
+        '200':
+          description: OK

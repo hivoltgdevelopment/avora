@@ -1,0 +1,28 @@
+{
+  "feature": "Daily Prioritization (Top 3 + Flight Plan)",
+  "scenarios": [
+    {
+      "given": "User has 2h of free time and 4 tasks with varying urgency/importance",
+      "when": "Flight plan is generated",
+      "then": [
+        "Top 3 tasks are selected by priority index (urgency 70%, importance 30%)",
+        "Tasks fit into available free blocks",
+        "Warning shown if total estimates exceed free time"
+      ]
+    },
+    {
+      "given": "No free blocks today",
+      "when": "Flight plan is generated",
+      "then": [
+        "Plan suggests rescheduling",
+        "Check-engine warning is shown",
+        "Next available day suggested"
+      ]
+    }
+  ],
+  "done": [
+    "Unit tests passing",
+    "E2E scenario validated",
+    "Docs updated"
+  ]
+}

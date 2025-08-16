@@ -1,0 +1,16 @@
+[
+  {
+    "id": "p1",
+    "name": "Avora Core",
+    "progressPct": 45,
+    "weight": 5,
+    "nextDeadline": "2025-08-22"
+  },
+  {
+    "id": "p2",
+    "name": "Sports Car Theme",
+    "progressPct": 70,
+    "weight": 3,
+    "nextDeadline": "2025-08-20"
+  }
+]

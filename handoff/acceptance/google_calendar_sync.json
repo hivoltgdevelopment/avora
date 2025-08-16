@@ -1,0 +1,25 @@
+{
+  "feature": "Google Calendar Integration (read-only)",
+  "scopes": [
+    "openid",
+    "email",
+    "profile",
+    "https://www.googleapis.com/auth/calendar.readonly"
+  ],
+  "scenarios": [
+    {
+      "given": "User connects Google Calendar",
+      "when": "Fetching today's events",
+      "then": [
+        "Fuel gauge reflects free vs busy hours",
+        "Next event countdown visible",
+        "No PII leaked to logs"
+      ]
+    }
+  ],
+  "done": [
+    "OAuth consent approved",
+    "Token stored server-side encrypted",
+    "Lighthouse and a11y pass"
+  ]
+}

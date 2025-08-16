@@ -1,0 +1,222 @@
+{
+  "product": {
+    "name": "Avora",
+    "description": "A customizable focus and prioritization dashboard that merges project progress, task urgency, and calendar availability into a cockpit-style interface. Themes (Sports Car, Zen Garden, Space Station) are interchangeable skins over one engine."
+  },
+  "objectives": [
+    "Provide world-class focus and prioritization guidance",
+    "Integrate Google Calendar and Monday.com for real-time data",
+    "Allow customizable themes without disrupting core engine",
+    "Deliver Top 3 daily tasks with context-aware scheduling",
+    "Scale into an AI co-pilot and voice-guided assistant",
+    "Support fiat and crypto payments via Stripe and Coinbase Commerce"
+  ],
+  "userStories": [
+    {
+      "role": "businessOwner",
+      "goal": "see project status visually as gauges",
+      "benefit": "spot urgency instantly"
+    },
+    {
+      "role": "professional",
+      "goal": "view only the most urgent tasks",
+      "benefit": "reduce overload"
+    },
+    {
+      "role": "manager",
+      "goal": "sync Monday tasks automatically",
+      "benefit": "no duplication"
+    },
+    {
+      "role": "dailyUser",
+      "goal": "visualize calendar free time",
+      "benefit": "know when to focus"
+    },
+    {
+      "role": "mobileUser",
+      "goal": "receive nudges and voice guidance",
+      "benefit": "stay on track hands-free"
+    }
+  ],
+  "features": {
+    "coreDashboard": {
+      "themeFramework": true,
+      "defaultTheme": "Sports Car",
+      "gaugeVisualization": true
+    },
+    "calendarIntegration": {
+      "googleCalendarOAuth": true,
+      "fuelGauge": true,
+      "countdownToNextEvent": true,
+      "warningForLowFocusTime": true
+    },
+    "mondayIntegration": {
+      "mondayAPISync": true,
+      "taskUrgencyScoring": true,
+      "deadlineRedlines": true,
+      "top3TaskSummary": true
+    },
+    "prioritizationEngine": {
+      "flightPlanDailyView": true,
+      "taskSlottingIntoCalendar": true,
+      "riskAlerts": true,
+      "weeklyOdometerTracking": true
+    },
+    "notificationsMobility": {
+      "pwaSupport": true,
+      "pushNotifications": true,
+      "slackTeamsIntegration": true,
+      "dailyRecapEmail": true
+    },
+    "aiCopilot": {
+      "mlPatternLearning": true,
+      "autoRescheduling": true,
+      "weeklyReports": true,
+      "expandedIntegrations": [
+        "Asana",
+        "Trello",
+        "Notion"
+      ]
+    },
+    "voiceGuidance": {
+      "stt": "Web Speech API or provider",
+      "tts": "Web Speech API or provider",
+      "handsFreeMode": true,
+      "dailySpokenRecap": true,
+      "voiceQueryTasks": true,
+      "multilingual": [
+        "en-US"
+      ]
+    },
+    "billing": {
+      "providers": [
+        "stripe",
+        "coinbase"
+      ],
+      "plans": [
+        "free",
+        "pro",
+        "business",
+        "enterprise"
+      ],
+      "trialDays": 14
+    }
+  },
+  "technical": {
+    "frontend": [
+      "React",
+      "Tailwind",
+      "Vite"
+    ],
+    "backend": [
+      "Node.js",
+      "Express"
+    ],
+    "database": "Supabase",
+    "deployment": {
+      "frontend": "GitHub Pages",
+      "backend": "Vercel or Netlify"
+    },
+    "themes": {
+      "system": "JSON-based theme config",
+      "initialThemes": [
+        "Sports Car",
+        "Zen Garden",
+        "Space Station"
+      ]
+    },
+    "security": [
+      "OAuth2",
+      "JWT",
+      "encryptedStorage"
+    ],
+    "performance": {
+      "lighthouse": {
+        "performance": 0.95,
+        "accessibility": 0.98,
+        "bestPractices": 1.0,
+        "seo": 1.0
+      }
+    }
+  },
+  "nonFunctional": {
+    "performance": "Load in under 2s with 100+ tasks",
+    "personalization": "Theme swap with no data loss",
+    "scalability": "Handle 500+ tasks without lag",
+    "reliability": "Offline fallback via PWA caching",
+    "minification": true
+  },
+  "roadmap": [
+    {
+      "phase": "MVP",
+      "features": [
+        "Avora Core",
+        "Sports Car Theme"
+      ],
+      "durationWeeks": 3
+    },
+    {
+      "phase": "Calendar Sync",
+      "features": [
+        "Google Calendar integration"
+      ],
+      "durationWeeks": 2
+    },
+    {
+      "phase": "Monday Sync",
+      "features": [
+        "Monday API integration"
+      ],
+      "durationWeeks": 4
+    },
+    {
+      "phase": "Prioritization Engine",
+      "features": [
+        "Daily Flight Plan"
+      ],
+      "durationWeeks": 3
+    },
+    {
+      "phase": "PWA & Notifications",
+      "features": [
+        "Push alerts",
+        "Mobile readiness"
+      ],
+      "durationWeeks": 3
+    },
+    {
+      "phase": "AI Co-pilot",
+      "features": [
+        "ML personalization"
+      ],
+      "durationWeeks": "Future"
+    }
+  ],
+  "successMetrics": [
+    "Daily active users",
+    "Decision fatigue reduction",
+    "Tasks completed on time",
+    "Theme customization adoption",
+    "Voice feature usage"
+  ],
+  "risks": [
+    {
+      "risk": "Integration fragility",
+      "mitigation": "Abstract API layer"
+    },
+    {
+      "risk": "Theme bloat",
+      "mitigation": "Limit to polished initial themes"
+    },
+    {
+      "risk": "User overwhelm",
+      "mitigation": "Top 3 focus rule"
+    }
+  ],
+  "futureEnhancements": [
+    "Community theme marketplace",
+    "Voice language packs",
+    "AI-driven theme personalization"
+  ],
+  "updatedAt": "2025-08-16T20:17:48.463357Z"
+}
