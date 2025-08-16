@@ -8,6 +8,7 @@
   ],
   "scenarios": [
     {
+      "name": "Connect and fetch today's events",
       "given": "User connects Google Calendar",
       "when": "Fetching today's events",
       "then": [

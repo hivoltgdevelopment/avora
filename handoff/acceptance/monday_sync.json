@@ -7,6 +7,7 @@
   ],
   "scenarios": [
     {
+      "name": "Fetch boards and items",
       "given": "User connects Monday.com",
       "when": "Fetching boards and items",
       "then": [

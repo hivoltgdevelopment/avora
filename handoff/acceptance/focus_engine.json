@@ -1,1 +1,13 @@
-{"criteria": "User can see Top 3 tasks"}
+{
+  "feature": "Focus Engine",
+  "scenarios": [
+    {
+      "name": "Top tasks highlighted",
+      "given": "Tasks have varying priority",
+      "when": "User views Focus Engine",
+      "then": [
+        "User can see Top 3 tasks"
+      ]
+    }
+  ]
+}
