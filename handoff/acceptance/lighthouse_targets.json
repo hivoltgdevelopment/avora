@@ -8,6 +8,7 @@
   },
   "scenarios": [
     {
+      "name": "CI enforces Lighthouse thresholds",
       "given": "Production build",
       "when": "LHCI runs in CI",
       "then": [

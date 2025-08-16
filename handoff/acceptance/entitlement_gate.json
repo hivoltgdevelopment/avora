@@ -2,6 +2,7 @@
   "feature": "Entitlement Gating",
   "scenarios": [
     {
+      "name": "Active subscription allows access",
       "given": "Subscription is active with 'flight-plan' entitlement",
       "when": "User opens Flight Plan",
       "then": [
@@ -9,6 +10,7 @@
       ]
     },
     {
+      "name": "Past due subscription shows gate",
       "given": "Subscription past_due after grace period",
       "when": "User opens Flight Plan",
       "then": [

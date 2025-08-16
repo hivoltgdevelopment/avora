@@ -2,6 +2,7 @@
   "feature": "PWA Install & Offline",
   "scenarios": [
     {
+      "name": "Chrome desktop install prompt",
       "given": "User on Chrome desktop",
       "when": "PWA criteria met",
       "then": [
@@ -10,6 +11,7 @@
       ]
     },
     {
+      "name": "Offline mode shows cached data",
       "given": "Network offline",
       "when": "User opens app",
       "then": [
