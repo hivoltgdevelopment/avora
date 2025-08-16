@@ -1,0 +1,26 @@
+[
+  {
+    "id": "t1",
+    "projectId": "p1",
+    "title": "Implement priority engine",
+    "status": "doing",
+    "due": "2025-08-18",
+    "estimateMin": 120
+  },
+  {
+    "id": "t2",
+    "projectId": "p1",
+    "title": "Google Calendar adapter",
+    "status": "todo",
+    "due": "2025-08-19",
+    "estimateMin": 90
+  },
+  {
+    "id": "t3",
+    "projectId": "p2",
+    "title": "Gauge dial polish",
+    "status": "todo",
+    "due": "2025-08-21",
+    "estimateMin": 60
+  }
+]

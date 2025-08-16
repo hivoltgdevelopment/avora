@@ -1,0 +1,24 @@
+{
+  "feature": "Entitlement Gating",
+  "scenarios": [
+    {
+      "given": "Subscription is active with 'flight-plan' entitlement",
+      "when": "User opens Flight Plan",
+      "then": [
+        "Feature accessible"
+      ]
+    },
+    {
+      "given": "Subscription past_due after grace period",
+      "when": "User opens Flight Plan",
+      "then": [
+        "Gate UI shown with upgrade/retry options"
+      ]
+    }
+  ],
+  "done": [
+    "Unit tests",
+    "E2E gating path",
+    "Docs updated"
+  ]
+}

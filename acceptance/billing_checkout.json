@@ -1,0 +1,29 @@
+{
+  "feature": "Checkout (Stripe + Coinbase Commerce)",
+  "scenarios": [
+    {
+      "given": "User selects Pro plan and card payment",
+      "when": "Checkout is initiated",
+      "then": [
+        "Stripe Checkout session URL returned",
+        "Redirect occurs",
+        "Webhook marks subscription active",
+        "Entitlements applied"
+      ]
+    },
+    {
+      "given": "User selects Business plan and crypto",
+      "when": "Checkout is initiated",
+      "then": [
+        "Coinbase charge created",
+        "Confirmation webhook updates subscription",
+        "Receipt reference stored"
+      ]
+    }
+  ],
+  "done": [
+    "Webhooks signature verified",
+    "Idempotent handlers",
+    "PCI SAQ-A documented"
+  ]
+}

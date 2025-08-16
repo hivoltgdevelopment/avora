@@ -1,0 +1,24 @@
+{
+  "feature": "Monday.com Integration (read-only)",
+  "scopes": [
+    "boards:read",
+    "items:read",
+    "users:read"
+  ],
+  "scenarios": [
+    {
+      "given": "User connects Monday.com",
+      "when": "Fetching boards and items",
+      "then": [
+        "Projects and tasks are normalized",
+        "Urgency scores computed",
+        "Redline shown for due<48h"
+      ]
+    }
+  ],
+  "done": [
+    "Adapter mapping documented",
+    "Unit tests on mapping",
+    "E2E fetch flow green"
+  ]
+}

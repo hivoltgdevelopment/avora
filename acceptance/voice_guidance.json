@@ -1,0 +1,26 @@
+{
+  "feature": "AI Voice & Audio",
+  "scenarios": [
+    {
+      "given": "User enables voice guidance",
+      "when": "Daily recap is requested",
+      "then": [
+        "TTS reads Top 3 and next meeting",
+        "Fallback to text if TTS unavailable"
+      ]
+    },
+    {
+      "given": "User says 'What should I do now?'",
+      "when": "STT captures intent",
+      "then": [
+        "Assistant surfaces current focus task",
+        "Optional start/stop focus timer"
+      ]
+    }
+  ],
+  "done": [
+    "Mute and caption options",
+    "Privacy notice for mic use",
+    "A11y checks pass"
+  ]
+}
