@@ -8,50 +8,285 @@ paths:
   /api/calendar/today:
     get:
       summary: Get today's calendar blocks
+      security:
+        - oauth2: []
+        - bearerAuth: []
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CalendarTodayResponse'
   /api/monday/tasks:
     get:
       summary: Get normalized tasks from Monday.com
+      security:
+        - oauth2: []
+        - bearerAuth: []
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MondayTasksResponse'
   /api/plan/generate:
     post:
       summary: Generate a daily plan
+      security:
+        - oauth2: []
+        - bearerAuth: []
       requestBody:
         required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PlanGenerationRequest'
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PlanGenerationResponse'
   /api/notify/shift:
     post:
       summary: Schedule a shift-gear notification
+      security:
+        - oauth2: []
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ShiftNotificationRequest'
       responses:
         '204':
           description: No Content
   /api/billing/checkout:
     post:
       summary: Initiate checkout (Stripe or Coinbase)
+      security:
+        - oauth2: []
+        - bearerAuth: []
       responses:
         '200':
           description: URL to redirect
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CheckoutResponse'
   /api/billing/portal:
     post:
       summary: Create Stripe customer portal session
+      security:
+        - oauth2: []
+        - bearerAuth: []
       responses:
         '200':
           description: URL
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PortalResponse'
   /api/webhooks/stripe:
     post:
       summary: Stripe webhook
+      security:
+        - oauth2: []
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StripeWebhookPayload'
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
   /api/webhooks/coinbase:
     post:
       summary: Coinbase Commerce webhook
+      security:
+        - oauth2: []
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CoinbaseWebhookPayload'
       responses:
         '200':
           description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GenericResponse'
+components:
+  securitySchemes:
+    oauth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://auth.avora.example.com/oauth/authorize
+          tokenUrl: https://auth.avora.example.com/oauth/token
+          scopes:
+            read: Read access
+            write: Write access
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    CalendarTodayResponse:
+      type: object
+      properties:
+        blocks:
+          type: array
+          items:
+            type: object
+            properties:
+              title:
+                type: string
+              start:
+                type: string
+                format: date-time
+              end:
+                type: string
+                format: date-time
+            required:
+              - title
+              - start
+              - end
+      required:
+        - blocks
+    MondayTasksResponse:
+      type: object
+      properties:
+        tasks:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              title:
+                type: string
+              status:
+                type: string
+            required:
+              - id
+              - title
+      required:
+        - tasks
+    PlanGenerationRequest:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date
+        tasks:
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                type: string
+              title:
+                type: string
+              estimatedMinutes:
+                type: integer
+            required:
+              - id
+              - title
+      required:
+        - date
+        - tasks
+    PlanGenerationResponse:
+      type: object
+      properties:
+        plan:
+          type: array
+          items:
+            type: object
+            properties:
+              taskId:
+                type: string
+              startTime:
+                type: string
+                format: date-time
+              endTime:
+                type: string
+                format: date-time
+            required:
+              - taskId
+              - startTime
+              - endTime
+      required:
+        - plan
+    ShiftNotificationRequest:
+      type: object
+      properties:
+        time:
+          type: string
+          format: date-time
+        message:
+          type: string
+      required:
+        - time
+    CheckoutResponse:
+      type: object
+      properties:
+        url:
+          type: string
+          format: uri
+      required:
+        - url
+    PortalResponse:
+      type: object
+      properties:
+        url:
+          type: string
+          format: uri
+      required:
+        - url
+    StripeWebhookPayload:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+        data:
+          type: object
+      required:
+        - id
+        - type
+        - data
+    CoinbaseWebhookPayload:
+      type: object
+      properties:
+        id:
+          type: string
+        type:
+          type: string
+        event:
+          type: object
+      required:
+        - id
+        - type
+        - event
+    GenericResponse:
+      type: object
+      properties:
+        message:
+          type: string
+      required:
+        - message
