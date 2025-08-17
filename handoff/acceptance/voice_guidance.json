@@ -2,6 +2,7 @@
   "feature": "AI Voice & Audio",
   "scenarios": [
     {
+      "name": "Daily recap via TTS",
       "given": "User enables voice guidance",
       "when": "Daily recap is requested",
       "then": [
@@ -10,6 +11,7 @@
       ]
     },
     {
+      "name": "Voice query surfaces focus task",
       "given": "User says 'What should I do now?'",
       "when": "STT captures intent",
       "then": [

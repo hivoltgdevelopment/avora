@@ -2,6 +2,7 @@
   "feature": "Checkout (Stripe + Coinbase Commerce)",
   "scenarios": [
     {
+      "name": "Card payment for Pro plan",
       "given": "User selects Pro plan and card payment",
       "when": "Checkout is initiated",
       "then": [
@@ -12,6 +13,7 @@
       ]
     },
     {
+      "name": "Crypto payment for Business plan",
       "given": "User selects Business plan and crypto",
       "when": "Checkout is initiated",
       "then": [
